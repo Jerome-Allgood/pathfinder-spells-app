@@ -13,7 +13,7 @@ DEITIES = []  # deities
 class Spell(models.Model):
     name = models.CharField(max_length=255, verbose_name=_('Name'))
     school = models.CharField(max_length=255, verbose_name=_('School'))
-    subcshools = models.CharField(
+    subschool = models.CharField(
         max_length=255, verbose_name=_('Subschool'), blank=True)
     descriptor = models.CharField(
         max_length=255, verbose_name=_('Descriptor'), blank=True)
@@ -22,7 +22,8 @@ class Spell(models.Model):
     casting_time = models.CharField(
         max_length=255, verbose_name=_('Casting time'))
     components = models.CharField(max_length=255, verbose_name=_('Components'))
-    costly_components = models.BooleanField(verbose_name=_('Costly components'))
+    costly_components = models.CharField(
+        max_length=255, verbose_name=_('Costly components'))
     range = models.CharField(
         max_length=255, verbose_name=_('Range'), blank=True)
     area = models.CharField(
@@ -37,10 +38,10 @@ class Spell(models.Model):
     shapeable = models.BooleanField(verbose_name=_('Shapeable'))
     saving_throw = models.CharField(
         max_length=255, verbose_name=_('Saving throw'), blank=True)
-    spell_resist = models.CharField(
+    spell_resistence = models.CharField(
         max_length=255, verbose_name=_('Spell resistence'), blank=True)
     description = models.TextField(verbose_name=_('Description'))
-    description_formatted = models.TextField(
+    description_formated = models.TextField(
         verbose_name=_('Description formatted'))
     source = models.CharField(max_length=100, verbose_name=_('Source'))
     full_text = models.TextField(verbose_name=_('Full text'))
@@ -70,7 +71,7 @@ class Spell(models.Model):
         verbose_name=_('Antipaladin lvl'), null=True)
     magus = models.IntegerField(verbose_name=_('Magus lvl'), null=True)
     adept = models.IntegerField(verbose_name=_('Adept lvl'), null=True)
-    bloodranger = models.IntegerField(
+    bloodrager = models.IntegerField(
         verbose_name=_('Bloodranger lvl'), null=True)
     shaman = models.IntegerField(verbose_name=_('Shaman lvl'), null=True)
     psychic = models.IntegerField(verbose_name=_('Psychic lvl'), null=True)
