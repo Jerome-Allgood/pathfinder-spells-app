@@ -121,8 +121,6 @@ class Spell(models.Model):
     shadow = models.BooleanField(verbose_name=_('Shadow'))
     sonic = models.BooleanField(verbose_name=_('Sonic'))
     water = models.BooleanField(verbose_name=_('Water'))
-    # TODO: figure out how to store links
-    linktext = models.TextField(verbose_name=_('External link'))
     material_cost = models.IntegerField(
         verbose_name=_('Material cost'), null=True)
     bloodline = models.CharField(
@@ -137,3 +135,6 @@ class Spell(models.Model):
     ruse = models.BooleanField(verbose_name=_('Ruse'))
     draconic = models.BooleanField(verbose_name=_('Draconic'))
     meditative = models.BooleanField(verbose_name=_('Meditative'))
+
+    def __str__(self):
+        return self.name
