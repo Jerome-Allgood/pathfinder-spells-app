@@ -6,6 +6,9 @@
   <title>Pathfinder spells</title>
 </head>
 <body>
+<form action="{% url 'spell_list' %}" method="get">
+<input name="q" class="form-control" type="text" placeholder="Search...">
+</form>
 {% block content %}{% endblock %}
 </body>
 </html>
