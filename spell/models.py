@@ -51,7 +51,7 @@ class Spell(models.Model):
     somatic = models.BooleanField(verbose_name=_('Somatic'))
     material = models.BooleanField(verbose_name=_('Material'))
     focus = models.BooleanField(verbose_name=_('Focus'))
-    divine_focus = models.BooleanField(verbose_name=_('Focus'))
+    divine_focus = models.BooleanField(verbose_name=_('Devine Focus'))
 
     # class levels
     sor = models.IntegerField(verbose_name=_('Sorcerer lvl'), null=True)
