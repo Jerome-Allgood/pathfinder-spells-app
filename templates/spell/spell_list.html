@@ -25,6 +25,7 @@
             <a href="?page={{ page_obj.next_page_number }}" class="btn btn-primary">next</a>
             <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-primary">last &raquo;</a>
         {% endif %}
+        <a href="javascript:history.back()" class="btn btn-primary">Go Back</a>
     </span>
 </div>
 {% endblock %}
