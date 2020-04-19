@@ -1,7 +1,10 @@
+{% extends 'spell/base.html' %}
+
+{% block content %}
 <h1>Spells</h1>
 <ul>
 {% for spell in object_list %}
-    <li>{{ spell }}</li>
+    <li><a href="{{ spell.id }}">{{ spell }}</a></li>
 {% empty %}
     <li>No articles yet.</li>
 {% endfor %}
@@ -24,3 +27,4 @@
         {% endif %}
     </span>
 </div>
+{% endblock %}
