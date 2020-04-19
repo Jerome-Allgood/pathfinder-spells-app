@@ -1,14 +1,17 @@
+from time import timezone
+
 from django.http import HttpResponse
 from django.views.generic import ListView
 from django.views import View
 
+from django.views.generic import ListView, DetailView
 
 from spell.models import Spell
 
 # Create your views here.
 
 
-class TestView(ListView):
+class SpellListView(ListView):
 	model = Spell
 	paginate_by = 20
 
@@ -17,8 +20,7 @@ class TestView(ListView):
 		return context
 
 
-
-
-
-
-
+class SpellDetailedView(DetailView):
+	template_name = "../templates/spell/spell_detail.html"
+	model = Spell
+	queryset = Spell.objects.all()
