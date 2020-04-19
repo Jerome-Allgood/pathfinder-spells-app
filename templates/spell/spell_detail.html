@@ -1,5 +1,19 @@
 {% extends 'spell/base.html' %}
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
 
 {% block content %}
-    pipa {{ spell }}
+  <div class="card" style="width: 750px;">
+  <h5 class="card-header">{{ spell }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">Spell description</h5>
+    <p class="card-text">{{spell.description}}</p>
+  <a href="javascript:history.back()" class="btn btn-primary">Go Back</a>
+
+  </div>
+</div>
+
 {% endblock %}
